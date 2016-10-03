@@ -2,10 +2,14 @@
 //
 
 #include "stdafx.h"
+#include "NearestNeighborTests.h"
 
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	return 0;
+    auto nnt = new NearestNeighborTest();
+
+    nnt->DoTests();
+    return 0;
 }
 

@@ -1,4 +1,5 @@
-﻿#include "NearestNeighbor.h"
+﻿#include "stdafx.h"
+#include "NearestNeighbor.h"
 
 /*
 Pick and visit an initial point p0 from P
@@ -10,7 +11,7 @@ Select pi to be the closest unvisited point to pi−1
 Visit pi
 Return to p0 from pn−1
 */
-void NearestNeighbor::traverse()
+void NearestNeighbor::traverse(Coordinate startingPoint, vector<Coordinate> v)
 {
 
 }

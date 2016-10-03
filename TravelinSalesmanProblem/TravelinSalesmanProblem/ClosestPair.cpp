@@ -1,4 +1,5 @@
-﻿#include "ClosestPair.h"
+﻿#include "stdafx.h"
+#include "ClosestPair.h"
 
 /*
 ClosestPair(P)

@@ -1,7 +1,7 @@
 ﻿#include "stdafx.h"
 #include "NearestNeighbor.h"
 #include <math.h>
-
+#include <iostream>
 /*
 Pick and visit an initial point p0 from P
 p = p0
@@ -12,8 +12,40 @@ Select pi to be the closest unvisited point to pi−1
 Visit pi
 Return to p0 from pn−1
 */
+
+NearestNeighbor::NearestNeighbor()
+{
+    vector<TraveledPoint> traveledPath;
+}
+
 void NearestNeighbor::traverse(Coordinate startingPoint, vector<Coordinate> v)
 {
+    //first make a copy of the vector
+    vector<Coordinate> coords;
+    for (auto i : v)
+    {
+        coords.push_back(i);
+    }
+
+    auto curLoc = startingPoint;
+
+
+    while (!coords.empty())
+    {
+        auto result = getNearestNeighbor(curLoc, coords);
+        auto nearestN = get<0>(result);
+        auto distance = get<1>(result);
+        auto index = get<2>(result);
+        traveledPath.push_back(TraveledPoint(nearestN, distance));
+        totalDistanceTraveled += distance;
+        coords.erase(coords.begin() + index);
+        curLoc = nearestN;
+
+        std::cout << "X" << curLoc.m_x << " , Y" << curLoc.m_y <<"  distance: "<<distance<<std::endl;
+        
+    }
+
+    std::cout << "Total travleled distance" << totalDistanceTraveled << endl;
 
 }
 
@@ -36,5 +68,5 @@ tuple<Coordinate,double,int> NearestNeighbor::getNearestNeighbor(Coordinate star
         }
         index++;
     }
-    return make_tuple(nearestCoord, minDistance,nearestIndex);
+    return make_tuple(nearestCoord, minDistance, nearestIndex);
 }

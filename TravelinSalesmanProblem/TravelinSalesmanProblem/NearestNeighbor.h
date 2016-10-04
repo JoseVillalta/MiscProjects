@@ -9,9 +9,10 @@ using namespace std;
 class NearestNeighbor
 {
 public:
+    NearestNeighbor();
     void traverse(Coordinate startingPoint, vector<Coordinate> v);
     tuple<Coordinate,double,int> getNearestNeighbor(Coordinate start, vector<Coordinate> v);
-    int totalDistanceTraveled;
+    double totalDistanceTraveled;
     vector<TraveledPoint> traveledPath;
 
 };

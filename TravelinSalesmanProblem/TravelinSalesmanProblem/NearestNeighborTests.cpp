@@ -11,6 +11,7 @@ using namespace std;
 void NearestNeighborTest::DoTests()
 {
     TestGetClosestNeighbor();
+    TestTSP();
 }
 
 void NearestNeighborTest::TestGetClosestNeighbor()
@@ -51,4 +52,18 @@ void NearestNeighborTest::TestGetClosestNeighbor()
 
 
     cout << "Get closest neighbor finished successfully" << endl;
+}
+
+void NearestNeighborTest::TestTSP()
+{
+    cout << "Test TSP" << endl;
+    auto nn = new NearestNeighbor();
+    auto startingPoint = Coordinate(0, 0);
+    vector<Coordinate> v;
+    v.push_back(Coordinate(10, 10));
+    v.push_back(Coordinate(10, 30));
+    v.push_back(Coordinate(30, 10));
+    v.push_back(Coordinate(30, 30));
+
+    nn->traverse(startingPoint, v);
 }

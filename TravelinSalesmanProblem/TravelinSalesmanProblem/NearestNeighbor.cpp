@@ -17,10 +17,12 @@ void NearestNeighbor::traverse(Coordinate startingPoint, vector<Coordinate> v)
 
 }
 
-Coordinate NearestNeighbor::getNearestNeighbor(Coordinate start, vector<Coordinate> v)
+tuple<Coordinate,double,int> NearestNeighbor::getNearestNeighbor(Coordinate start, vector<Coordinate> v)
 {
     double minDistance = 100000;
     auto nearestCoord = start;
+    int index = 0;
+    int nearestIndex = 0;
     for (auto i : v)
     {
         int x = abs(i.m_x - start.m_x);
@@ -30,7 +32,9 @@ Coordinate NearestNeighbor::getNearestNeighbor(Coordinate start, vector<Coordina
         {
             minDistance = distance;
             nearestCoord = i;
+            nearestIndex = index;
         }
+        index++;
     }
-    return nearestCoord;
+    return make_tuple(nearestCoord, minDistance,nearestIndex);
 }

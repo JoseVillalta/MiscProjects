@@ -39,6 +39,9 @@
     <ClInclude Include="NearestNeighborTests.h">
       <Filter>Tests</Filter>
     </ClInclude>
+    <ClInclude Include="TraveledPoint.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

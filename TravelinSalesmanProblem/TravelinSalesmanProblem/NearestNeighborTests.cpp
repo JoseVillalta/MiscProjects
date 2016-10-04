@@ -4,6 +4,7 @@
 #include "Coordinate.h"
 #include <iostream>
 #include <vector>
+#include <math.h>
 
 using namespace std;
 
@@ -25,22 +26,28 @@ void NearestNeighborTest::TestGetClosestNeighbor()
     v.push_back(Coordinate(30, 30));
 
     auto nearest = nn->getNearestNeighbor(startingPoint, v);
-
-    _ASSERT(nearest.m_x == 10);
-    _ASSERT(nearest.m_y == 10);
+    _ASSERT(get<0>(nearest).m_x == 10);
+    _ASSERT(get<0>(nearest).m_y == 10);
+    //distance should be sqrt(x^2 + y^2)
+    _ASSERT(get<1>(nearest) == sqrt(200));
+    _ASSERT(get<2>(nearest) == 0);
 
     startingPoint.m_x = 40;
     nearest = nn->getNearestNeighbor(startingPoint, v);
 
-    _ASSERT(nearest.m_x == 30);
-    _ASSERT(nearest.m_y == 10);
+    _ASSERT(get<0>(nearest).m_x == 30);
+    _ASSERT(get<0>(nearest).m_y == 10);
+    _ASSERT(get<1>(nearest) == sqrt(200));
+    _ASSERT(get<2>(nearest) == 2);
 
     v.push_back(Coordinate(-1, -2));
     startingPoint.m_x = 0;
     startingPoint.m_y = 0;
     nearest = nn->getNearestNeighbor(startingPoint, v);
-    _ASSERT(nearest.m_x == -1);
-    _ASSERT(nearest.m_y == -2);
+    _ASSERT(get<0>(nearest).m_x == -1);
+    _ASSERT(get<0>(nearest).m_y == -2);
+    _ASSERT(get<1>(nearest) == sqrt(5));
+    _ASSERT(get<2>(nearest) == 4);
 
 
     cout << "Get closest neighbor finished successfully" << endl;

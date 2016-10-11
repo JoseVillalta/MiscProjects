@@ -1,4 +1,4 @@
-#pragma
+#pragma once
 #include "Coordinate.h"
 
 class TraveledPoint
@@ -6,7 +6,7 @@ class TraveledPoint
 public:
     Coordinate loc;
     //Distance to next location
-    int dist;
+    double dist;
     TraveledPoint(Coordinate coord, double distance)
     {
         loc = coord;

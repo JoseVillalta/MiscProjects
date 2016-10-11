@@ -4,6 +4,14 @@
 class LinkedTraveledPoint
 {
 public:
-    TraveledPoint point;
+    TraveledPoint* point;
     LinkedTraveledPoint * next;
+    LinkedTraveledPoint(TraveledPoint * coord, LinkedTraveledPoint * nextNode = nullptr)
+    {
+        point = coord;
+        next = nextNode;
+
+    }
+
+
 };

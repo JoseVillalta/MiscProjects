@@ -7,4 +7,5 @@ public:
     void DoTests();
 private:
     void TestGetClosestPair();
+    void TestTraversal();
 };

@@ -9,9 +9,10 @@ using namespace std;
 class ClosestPair
 {
 public:
-    void traverse();
+    LinkedTraveledPoint * traverse(Coordinate start, vector<Coordinate> v);
     ClosestPair();
-    tuple<LinkedTraveledPoint *, int> getClosestPair(LinkedTraveledPoint * p1, LinkedTraveledPoint * p2, vector<Coordinate> v);
+    tuple<LinkedTraveledPoint *,LinkedTraveledPoint *, int> getClosestPair(LinkedTraveledPoint * p1, LinkedTraveledPoint * p2, vector<Coordinate> v);
+    double m_dTraveledDistance;
 private:
     NearestNeighbor * m_nn;
 };

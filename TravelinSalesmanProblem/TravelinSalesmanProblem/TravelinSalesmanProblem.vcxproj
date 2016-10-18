@@ -81,6 +81,7 @@
   <ItemGroup>
     <ClInclude Include="ClosestPair.h" />
     <ClInclude Include="ClosestPairTests.h" />
+    <ClInclude Include="ComparisonTest.h" />
     <ClInclude Include="Coordinate.h" />
     <ClInclude Include="LinkedTraveledPoint.h" />
     <ClInclude Include="NearestNeighbor.h" />
@@ -92,6 +93,7 @@
   <ItemGroup>
     <ClCompile Include="ClosestPair.cpp" />
     <ClCompile Include="ClosestPairTests.cpp" />
+    <ClCompile Include="ComparisonTest.cpp" />
     <ClCompile Include="NearestNeighbor.cpp" />
     <ClCompile Include="NearestNeighborTests.cpp" />
     <ClCompile Include="stdafx.cpp">

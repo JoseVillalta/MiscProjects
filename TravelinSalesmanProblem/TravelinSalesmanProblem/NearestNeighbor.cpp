@@ -41,11 +41,11 @@ void NearestNeighbor::traverse(Coordinate startingPoint, vector<Coordinate> v)
         coords.erase(coords.begin() + index);
         curLoc = nearestN;
 
-        std::cout << "X" << curLoc.m_x << " , Y" << curLoc.m_y <<"  distance: "<<distance<<std::endl;
+       // std::cout << "X" << curLoc.m_x << " , Y" << curLoc.m_y <<"  distance: "<<distance<<std::endl;
         
     }
 
-    std::cout << "Total travleled distance" << totalDistanceTraveled << endl;
+    //std::cout << "Total travleled distance" << totalDistanceTraveled << endl;
 
 }
 

@@ -11,6 +11,7 @@ using namespace std;
 void ComparisonTest::DoTests()
 {
     Compare();
+    CompareSanityTest();
 }
 
 void ComparisonTest::Compare()
@@ -39,10 +40,38 @@ void ComparisonTest::Compare()
     
     cout << "Nearest Neighbor Count is: " << nn_count << endl;
     cout << "Closest Pair is :" << cp_count << endl;
+}
+
+void ComparisonTest::CompareSanityTest()
+{
+    nn_count = 0;
+    cp_count = 0;
+    auto nn = new NearestNeighbor();
+    auto cp = new ClosestPair();
+
+    vector<Coordinate> v;
+    v.push_back(Coordinate(0, 0));
+    v.push_back(Coordinate(12, 0));
+    v.push_back(Coordinate(12, 10));
+    v.push_back(Coordinate(24, 10));
+    v.push_back(Coordinate(24, 0));
+
+    Coordinate start;
+    start.m_x = 0;
+    start.m_y = 10;
+
+
+    nn->traverse(start, v);
+    cout << "Nearest Neighbor distance: " << nn->totalDistanceTraveled << endl;
+
+    cp->traverse(start, v);
+    cout << "Closest Pair distance: " << cp->m_dTraveledDistance << endl;
+
+
+
 
 
 }
-
 vector<Coordinate> ComparisonTest::getRandomVector(unsigned int size, int upperLimit)
 {
     vector<Coordinate> v;

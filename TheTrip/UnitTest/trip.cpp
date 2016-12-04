@@ -14,7 +14,7 @@ string calculate(int n, vector<double> v)
  
     double ave = sum / (float)n;
 
-    long long result = 0;
+    double result = 0;
     for (double diff : v)
     {
         if (diff < ave)
@@ -22,6 +22,7 @@ string calculate(int n, vector<double> v)
             result += ave - diff;
         }
     }
+
 
     string wholeResult = to_string((int)result);
     if (wholeResult.length() == 1)

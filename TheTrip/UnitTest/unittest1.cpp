@@ -117,5 +117,100 @@ namespace UnitTest
             string expectedVal = "$2407.09";
             Assert::AreEqual(expectedVal, result);
         }
+        TEST_METHOD(TestMethod10)
+        {
+            vector<double>v;
+            v.push_back(12.00);
+            v.push_back(11.99);
+            v.push_back(11.95);
+            v.push_back(5.55);
+            v.push_back(5.54);
+            v.push_back(5.53);
+            string result = calculate(6, v);
+            string expectedVal = "$9.66";
+            Assert::AreEqual(expectedVal, result);
+        }
+        TEST_METHOD(TestMethod11)
+        {
+            vector<double>v;
+            v.push_back(12.00);
+            v.push_back(11.99);
+            v.push_back(11.96);
+            v.push_back(5.55);
+            v.push_back(5.54);
+            v.push_back(5.53);
+            string result = calculate(6, v);
+            string expectedVal = "$9.66";
+            Assert::AreEqual(expectedVal, result);
+        }
+        TEST_METHOD(TestMethod12)
+        {
+            vector<double>v;
+            v.push_back(12.00);
+            v.push_back(11.99);
+            v.push_back(11.97);
+            v.push_back(5.55);
+            v.push_back(5.54);
+            v.push_back(5.53);
+            string result = calculate(6, v);
+            string expectedVal = "$9.66";
+            Assert::AreEqual(expectedVal, result);
+        }
+        TEST_METHOD(TestMethod13)
+        {
+            vector<double>v;
+            v.push_back(12.00);
+            v.push_back(11.99);
+            v.push_back(11.98);
+            v.push_back(5.55);
+            v.push_back(5.54);
+            v.push_back(5.53);
+            string result = calculate(6, v);
+            string expectedVal = "$9.66";
+            Assert::AreEqual(expectedVal, result);
+        }
+        TEST_METHOD(TestMethod14)
+        {
+            vector<double>v;
+            v.push_back(12.00);
+            v.push_back(11.99);
+            v.push_back(11.99);
+            v.push_back(5.55);
+            v.push_back(5.54);
+            v.push_back(5.53);
+            string result = calculate(6, v);
+            string expectedVal = "$9.67";
+            Assert::AreEqual(expectedVal, result);
+        }
+        TEST_METHOD(TestMethod15)
+        {
+            vector<double>v;
+            v.push_back(12.00);
+            v.push_back(11.99);
+            v.push_back(11.99);
+            v.push_back(5.56);
+            v.push_back(5.54);
+            v.push_back(5.53);
+            string result = calculate(6, v);
+            string expectedVal = "$9.67";
+            Assert::AreEqual(expectedVal, result);
+        }
+        TEST_METHOD(TestMethod16)
+        {
+            vector<double>v;
+            v.push_back(12.00);
+            v.push_back(12.00);
+            string result = calculate(2, v);
+            string expectedVal = "$0.00";
+            Assert::AreEqual(expectedVal, result);
+        }
+        TEST_METHOD(TestMethod17)
+        {
+            vector<double>v;
+            v.push_back(99.00);
+            string result = calculate(1, v);
+            string expectedVal = "$0.00";
+            Assert::AreEqual(expectedVal, result);
+        }
     };
 }

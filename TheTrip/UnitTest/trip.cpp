@@ -4,7 +4,7 @@
 string calculate(int n, vector<double> v)
 {
 
-    long long sum = 0;
+    double sum = 0;
     
     for (int i = 0; i < n; i++)
     {
@@ -12,17 +12,17 @@ string calculate(int n, vector<double> v)
         sum += v[i];
     }
  
-    double ave = sum / (float)n;
+    double ave = sum / (double)n;
 
+    
     double result = 0;
     for (double diff : v)
     {
         if (diff < ave)
         {
-            result += ave - diff;
+            result += ave-diff;
         }
     }
-
 
     string wholeResult = to_string((int)result);
     if (wholeResult.length() == 1)

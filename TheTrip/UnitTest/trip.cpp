@@ -1,5 +1,42 @@
 #include "stdafx.h"
 #include "trip.h"
+#include <string>
+
+using namespace std;
+
+double smoother(double raw_ave)
+{
+    string::size_type n;
+    string raw_string = to_string(raw_ave);
+    n = raw_string.find(".");
+    string decimal = raw_string.substr(n);
+
+    double new_ave = 0;
+
+    if (decimal.length() >= 5)
+    {
+       
+        string cmp = decimal.substr(0, 5);
+        if (cmp == ".5000")
+        {
+            new_ave = floor(raw_ave);
+        }
+        else if (cmp == ".3333")
+        {
+            new_ave = floor(raw_ave);
+        }
+        else
+        {
+            new_ave = raw_ave;
+        }
+    }
+    else
+    {
+        new_ave = raw_ave;
+    }
+
+    return new_ave;
+}
 
 string calculate(int n, vector<double> v)
 {
@@ -14,13 +51,14 @@ string calculate(int n, vector<double> v)
  
     double ave = sum / (double)n;
 
+    double new_ave = smoother(ave);
     
     double result = 0;
     for (double diff : v)
     {
-        if (diff < ave)
+        if (diff < new_ave)
         {
-            result += ave-diff;
+            result += new_ave - diff;
         }
     }
 

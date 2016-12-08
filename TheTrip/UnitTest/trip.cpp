@@ -7,38 +7,12 @@ using namespace std;
 
 double smoother(double raw_ave)
 {
-    string::size_type n;
-    string raw_string = to_string(raw_ave);
-    n = raw_string.find(".");
-    string decimal = raw_string.substr(n);
+    double decimal = raw_ave - floor(raw_ave);
+    double new_ave = raw_ave;
 
-    double new_ave = 0;
-
-   if (decimal.length() >= 5)
+    if (decimal <= .50 && decimal > 0.009)
     {
-       
-        string cmp = decimal.substr(0, 5);
-        if (cmp == ".5000")
-        {
-            new_ave = floor(raw_ave);
-        }
-        else if (cmp == ".3333")
-        {
-            new_ave = floor(raw_ave);
-        }
-        else if (cmp == ".6666")
-        {
-            new_ave = floor(raw_ave);
-            new_ave = new_ave + 0.66;
-        }
-        else
-        {
-            new_ave = raw_ave;
-        }
-    }
-    else
-    {
-        new_ave = raw_ave;
+        new_ave = floor(raw_ave);
     }
 
     return new_ave;

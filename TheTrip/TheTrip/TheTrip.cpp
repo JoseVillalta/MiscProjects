@@ -15,9 +15,9 @@ double smoother(double raw_ave)
     double decimal = raw_ave - floor(raw_ave);
     double new_ave = raw_ave;
 
-    if (decimal >= .50)
+    if (decimal <= .50 && decimal > 0.009)
     {
-        new_ave = round(raw_ave);
+        new_ave = floor(raw_ave);
     }
 
     return new_ave;
@@ -41,9 +41,9 @@ string calculate(int n, vector<double> v)
     double result = 0;
     for (double diff : v)
     {
-        if (diff > new_ave)
+        if (diff < new_ave)
         {
-            result += diff - new_ave;
+            result += new_ave - diff;
         }
     }
 

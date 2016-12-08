@@ -127,7 +127,7 @@ namespace UnitTest
             v.push_back(5.54);
             v.push_back(5.53);
             string result = calculate(6, v);
-            string expectedVal = "$9.66";
+            string expectedVal = "$9.65";
             Assert::AreEqual(expectedVal, result);
         }
         TEST_METHOD(TestMethod11)

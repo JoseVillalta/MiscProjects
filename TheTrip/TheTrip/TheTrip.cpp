@@ -8,62 +8,42 @@
 #include <math.h>
 #include <iomanip>
 #include <string>
+#include <algorithm>
 using namespace std;
-
-double smoother(double raw_ave)
-{
-    double decimal = raw_ave - floor(raw_ave);
-    double new_ave = raw_ave;
-
-    if (decimal <= .50 && decimal > 0.009)
-    {
-        new_ave = floor(raw_ave);
-    }
-
-    return new_ave;
-}
 
 string calculate(int n, vector<double> v)
 {
 
     double sum = 0;
+    double high = 0.0;
+    double low = 0.0;
 
     for (int i = 0; i < n; i++)
     {
-        v[i] = v[i] * 100;
         sum += v[i];
     }
 
-    double ave = sum / (double)n;
+    double ave = sum / n;
 
-    double new_ave = smoother(ave);
-
-    double result = 0;
+    double temp = 0;
     for (double diff : v)
     {
-        if (diff < new_ave)
+        double temp = diff - ave;
+        if (temp >= 0)
         {
-            result += new_ave - diff;
+            high += floor(temp * 100) / 100;
+        }
+        else
+        {
+            low -= ceil(temp * 100) / 100;
         }
     }
+    double result = max(high, low);
 
-    string wholeResult = to_string((int)result);
-    if (wholeResult.length() == 1)
-    {
-        wholeResult = "00" + wholeResult;
-    }
-    else if (wholeResult.length() == 2)
-    {
-        wholeResult = "0" + wholeResult;
-    }
-    string decimal = wholeResult.substr(wholeResult.length() - 2);
-    wholeResult = wholeResult.substr(0, wholeResult.length() - 2);
-
-
-    cout << "$" << wholeResult << "." << decimal << endl;
-
-    string output;
-    output = "$" + wholeResult + "." + decimal;
+    string raw_string = to_string(result);
+    string::size_type s;
+    s = raw_string.find(".");
+    string output = "$" + raw_string.substr(0, s + 3);
     return output;
 }
 int main()
@@ -82,7 +62,8 @@ int main()
             v.push_back(f);
             counter--;
         }
-        calculate(n, v);
+        string result = calculate(n, v);
+        cout << result << endl;
     }
     return 0;
 }

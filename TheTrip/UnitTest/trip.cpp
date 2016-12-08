@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "trip.h"
 #include <string>
+#include <math.h>
 
 using namespace std;
 
@@ -13,7 +14,7 @@ double smoother(double raw_ave)
 
     double new_ave = 0;
 
-    if (decimal.length() >= 5)
+   if (decimal.length() >= 5)
     {
        
         string cmp = decimal.substr(0, 5);
@@ -24,6 +25,11 @@ double smoother(double raw_ave)
         else if (cmp == ".3333")
         {
             new_ave = floor(raw_ave);
+        }
+        else if (cmp == ".6666")
+        {
+            new_ave = floor(raw_ave);
+            new_ave = new_ave + 0.66;
         }
         else
         {

@@ -212,5 +212,16 @@ namespace UnitTest
             string expectedVal = "$0.00";
             Assert::AreEqual(expectedVal, result);
         }
+        TEST_METHOD(TestMethod18)
+        {
+            vector<double>v;
+            v.push_back(9999.1);
+            v.push_back(9999.1);
+            v.push_back(9999.1);
+            v.push_back(9999.0);
+            string result = calculate(4, v);
+            string expectedVal = "$0.07";
+            Assert::AreEqual(expectedVal, result);
+        }
     };
 }

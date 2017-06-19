@@ -13,5 +13,12 @@ int * ConvertToArray(int a)
 
 int HasCarry(int a, int b, int c)
 {
-    return 0;
+    if( a + b + c >= 10)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
 }

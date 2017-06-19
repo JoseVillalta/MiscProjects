@@ -5,5 +5,5 @@
 
 using namespace std;
 
-tuple <int, string> CountVotes(vector<string> candidates, vector<vector<int>> votes);
+tuple <int, vector<string>> CountVotes(vector<string> candidates, vector<vector<int>> votes);
 

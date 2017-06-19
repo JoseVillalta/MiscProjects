@@ -2,7 +2,9 @@
 #include "AustralianVoting.h"
 
 
-tuple<int, string> CountVotes(vector<string> candidates, vector<vector<int>> votes)
+tuple<int, vector<string>> CountVotes(vector<string> candidates, vector<vector<int>> votes)
 {
-    return make_tuple(1, "John Doe");
+    vector<string> v;
+    v.push_back("John Doe");
+    return make_tuple(1, v);
 }

@@ -18,6 +18,8 @@ int CalculateNumberCarry(int a, int b)
         }
     }
 
+    delete[] arrA;
+    delete[] arrB;
     return counter;
 }
 

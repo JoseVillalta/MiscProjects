@@ -28,13 +28,17 @@ int main()
         auto b = stoi(sb);
 
         auto result = CalculateNumberCarry(a, b);
-        if(result > 0)
+        if (result == 0)
         {
-            cout << result<<" carry operations." << endl;
+            cout << "No carry operation." << endl;
         }
-        else if(result == 0)
+        else if (result == 1)
         {
-            cout << "No carry operations." << endl;
+            cout << "1 carry operation." << endl;
+        }
+        else if (result > 1)
+        {
+            cout << result << " carry operations." << endl;
         }
         else
         {

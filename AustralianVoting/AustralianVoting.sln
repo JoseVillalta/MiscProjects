@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AustralianVoting", "AustralianVoting\AustralianVoting.vcxproj", "{7C11A1D4-A46F-4CB8-BA92-44FF8CF00CB2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestAustralianVoting", "TestAustralianVoting\TestAustralianVoting.vcxproj", "{C037FF97-51E4-4919-9C40-E89594D8A7E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C11A1D4-A46F-4CB8-BA92-44FF8CF00CB2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7C11A1D4-A46F-4CB8-BA92-44FF8CF00CB2}.Debug|Win32.Build.0 = Debug|Win32
+		{7C11A1D4-A46F-4CB8-BA92-44FF8CF00CB2}.Release|Win32.ActiveCfg = Release|Win32
+		{7C11A1D4-A46F-4CB8-BA92-44FF8CF00CB2}.Release|Win32.Build.0 = Release|Win32
+		{C037FF97-51E4-4919-9C40-E89594D8A7E5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C037FF97-51E4-4919-9C40-E89594D8A7E5}.Debug|Win32.Build.0 = Debug|Win32
+		{C037FF97-51E4-4919-9C40-E89594D8A7E5}.Release|Win32.ActiveCfg = Release|Win32
+		{C037FF97-51E4-4919-9C40-E89594D8A7E5}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

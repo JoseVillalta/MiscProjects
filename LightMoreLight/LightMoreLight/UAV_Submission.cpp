@@ -2,36 +2,21 @@
 //
 
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
-bool CalcOnOrOff(int n)
+bool CalcOnOrOff(unsigned int n)
 {
-    bool isOn = false;
-    int nFactors = 0;
+    unsigned int x = sqrt(n);
 
-    for (int i = 1; i <= n; i++)
-    {
-        auto r = n % i;
-        if (r == 0)
-        {
-            nFactors++;
-        }
-    }
-
-    if ((nFactors % 2) == 0)
-    {
-        isOn = false;
-    }
-    else
-    {
-        isOn = true;
-    }
-    return isOn;
+    if (n == x*x) return true;
+    return false; 
+  
 }
 int main()
 {
-    int n;
+    unsigned int n;
     while(cin >> n )
     {
         if (n == 0) break;

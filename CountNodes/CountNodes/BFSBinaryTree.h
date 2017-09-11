@@ -12,10 +12,11 @@ public:
     int parent[MAXV + 1];
 
     TreeNode * InsertNode(TreeNode * root, int val);
-    int CountNodes(int x, int y);
+    void BFSearch(int x);
     BFSBinaryTree();
-private:
     void InitSearch();
-    int CountJumps(int x, int y);
+    void CountJumps(int x, int y);
+private:
+    
     
 };

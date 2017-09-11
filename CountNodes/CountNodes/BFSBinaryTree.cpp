@@ -2,6 +2,7 @@
 #include "stdafx.h"
 #include "BFSBinaryTree.h"
 #include <queue>
+#include <iostream>
 using namespace std;
 
 BFSBinaryTree::BFSBinaryTree()
@@ -65,12 +66,20 @@ void BFSBinaryTree::InitSearch()
     }
 }
 
-int BFSBinaryTree::CountJumps(int x, int y)
+void BFSBinaryTree::CountJumps(int start, int end)
 {
-    
+    if (start == end || end == -1)
+    {
+        cout << endl;
+    }
+    else
+    {
+        CountJumps(start, parent[end]);
+        cout << " " << end;
+    }
 }
 
-int BFSBinaryTree::CountNodes(int x, int y)
+void BFSBinaryTree::BFSearch(int x)
 {
     auto start = nodes[x];
 
@@ -79,21 +88,64 @@ int BFSBinaryTree::CountNodes(int x, int y)
     q->push(start->parent);
     q->push(start->right);
     discovered[x] = true;
-    processed[x] = true;
-
     if (start->left != nullptr)
     {
         parent[start->left->data] = start->data;
+        discovered[start->left->data] = true;
+    }
+    if (start->right != nullptr)
+    {
+        parent[start->right->data] = start->data;
+        discovered[start->right->data] = true;
+    }
+    if (start->parent != nullptr)
+    {
+        parent[start->parent->data] = start->data;
+        discovered[start->parent->data] = true;
     }
 
+    TreeNode * p;
+    
     while (!q->empty())
     {
-        auto v = q->front();
+        p = q->front();
         q->pop();
 
-        if (v != nullptr)
+        if (p != nullptr)
         {
-            processed[v->data];
+            processed[p->data] = true;
+            auto l = p->left;
+            if (l != nullptr)
+            {  
+                if (!discovered[l->data])
+                {
+                    q->push(l);
+                    discovered[l->data] = true;
+                    parent[l->data] = p->data;
+                }
+            }
+           
+            auto dad = p->parent;
+            if (dad != nullptr)
+            {
+                if (!discovered[dad->data])
+                {
+                    q->push(dad);
+                    discovered[dad->data] = true;
+                    parent[dad->data] = p->data;
+                }
+            }
+
+            auto r = p->right;
+            if (r != nullptr)
+            {
+                if (!discovered[r->data])
+                {
+                    q->push(r);
+                    discovered[r->data] = true;
+                    parent[r->data] = p->data;
+                }
+            }
         }
         
         

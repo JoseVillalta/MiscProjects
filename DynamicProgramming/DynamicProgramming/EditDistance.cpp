@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include <cstring>
+#include <iostream>
 #define MATCH     0       /* enumerated type symbol for match */
 #define INSERT    1       /* enumerated type symbol for insert */
 #define DELETE    2       /* enumerated type symbol for delete */
@@ -13,6 +14,25 @@ typedef struct
 }cell;
 
 cell m[MAXLEN+1][MAXLEN+1];
+
+void match_out(char * s, char * t, int i, int j)
+{
+	if (s[i] == t[j]) std::cout << "M";
+	else
+	{
+		std::cout << "S";
+	}
+}
+
+void insert_out()
+{
+	std::cout << "I";
+}
+
+void delete_out()
+{
+	std::cout << "D";
+}
 
 void goal_cell(char *s, char *t, int *i, int *j)
 {
@@ -84,6 +104,27 @@ int string_compare(char *s, char *t, int s_size, int t_size)
 	}
 
 	return m[s_size-1][t_size-1].cost;
+}
+
+void reconstruct_path(char * s, char * t, int i, int j)
+{
+	if (m[i][j].parent == -1) return;
+
+	if(m[i][j].parent == MATCH)
+	{
+		reconstruct_path(s, t, i - 1, j - 1);
+		match_out(s,t,i,j);
+	}
+	else if (m[i][j].parent == INSERT)
+	{
+		reconstruct_path(s, t, i, j - 1);
+		insert_out();
+	}
+	else
+	{
+		reconstruct_path(s, t, i - 1, j);
+		delete_out();
+	}
 }
 
 // Recursive solution 

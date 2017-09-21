@@ -25,6 +25,9 @@
     <Filter Include="LongestIncreasingSubsequence">
       <UniqueIdentifier>{e724fb43-40ea-4aed-9469-e5280d080552}</UniqueIdentifier>
     </Filter>
+    <Filter Include="PartitionProblem">
+      <UniqueIdentifier>{584a030e-614a-4e76-889f-49d04e833ea3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -60,6 +63,12 @@
     <ClInclude Include="LISTest.h">
       <Filter>LongestIncreasingSubsequence</Filter>
     </ClInclude>
+    <ClInclude Include="PartitionProblem.h">
+      <Filter>PartitionProblem</Filter>
+    </ClInclude>
+    <ClInclude Include="PartitionTest.h">
+      <Filter>PartitionProblem</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -91,6 +100,12 @@
     </ClCompile>
     <ClCompile Include="LISTest.cpp">
       <Filter>LongestIncreasingSubsequence</Filter>
+    </ClCompile>
+    <ClCompile Include="PartitionProblem.cpp">
+      <Filter>PartitionProblem</Filter>
+    </ClCompile>
+    <ClCompile Include="PartitionTest.cpp">
+      <Filter>PartitionProblem</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

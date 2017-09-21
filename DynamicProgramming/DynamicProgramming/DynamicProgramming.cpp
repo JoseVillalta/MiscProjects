@@ -6,6 +6,7 @@
 #include "BinCoTest.h"
 #include "EditDistanceTest.h"
 #include "LISTest.h"
+#include "PartitionTest.h"
 
 int main()
 {
@@ -13,6 +14,7 @@ int main()
 	RunBinCoTest();
 	RunEditDistanceTests();
 	RunLISTest();
+	RunPartitionProblemTest();
     return 0;
 }
 

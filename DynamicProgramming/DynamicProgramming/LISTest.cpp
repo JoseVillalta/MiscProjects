@@ -10,6 +10,8 @@ void RunLISTest()
 	//int arr[] = { 7,2,3};
 	//auto result = lis_r(arr, 3);
 	auto result = lis(arr, 8);
-	std::cout << "The Longest Increasing Subsequence is: " << result << std::endl;
+	std::cout << "The Longest Increasing Subsequence is: " << result.val << std::endl;
+	printLIS(result.parent, arr);
+	std::cout << std::endl;
 
 }

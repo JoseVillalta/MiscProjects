@@ -1,5 +1,11 @@
 #include "stdafx.h"
 #include "LongestIncreasingSubsequence.h"
+#include <iostream>
+#define MAXV 100
+
+
+
+cell lis_arr[MAXV];
 
 int _lis_r(int arr[], int n, int * max_ref)
 {
@@ -31,36 +37,48 @@ int lis_r(int arr[], int n)
 	return max;
 }
 
-int lis(int arr[], int n)
+cell lis(int arr[], int n)
 {
-	int i, j, max = 0;
-	auto lis = new int[n]();
+	int i, j, par = 0;
+
+	cell result;
+	result.val = 0;
+	result.parent = -1;
 
 	for(i=0;i<n;i++)
 	{
-		lis[i] = 1;
+		lis_arr[i].val = 1;
+		lis_arr[i].parent = -1;
 	}
 
 	for(i=1;i<n;i++)
 	{
 		for(j=0;j<i;j++)
 		{
-			if(arr[i]>arr[j] && lis[i] < lis[j]+1)
+			if(arr[i]>arr[j] && lis_arr[i].val < lis_arr[j].val + 1)
 			{
-				lis[i] = lis[j] + 1;
+				lis_arr[i].val = lis_arr[j].val + 1;
+				lis_arr[i].parent = j;
 			}
 		}
 	}
 
 	for(i=0;i<n;i++)
 	{
-		if(max < lis[i])
+		if(result.val < lis_arr[i].val)
 		{
-			max = lis[i];
+			result.val = lis_arr[i].val;
+			result.parent = i;
 		}
 	}
 
-	delete[] lis;
+	return result;
+}
 
-	return max;
+void printLIS(int parent, int * arr)
+{
+	if (parent == -1) return;
+
+	printLIS(lis_arr[parent].parent,arr);
+	std::cout << arr[parent] << " ,";
 }

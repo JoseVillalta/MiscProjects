@@ -22,6 +22,9 @@
     <Filter Include="EditDistance">
       <UniqueIdentifier>{4d158019-7dcf-467e-88b8-2d5e25629d8c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="LongestIncreasingSubsequence">
+      <UniqueIdentifier>{e724fb43-40ea-4aed-9469-e5280d080552}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -51,6 +54,12 @@
     <ClInclude Include="EditDistanceTest.h">
       <Filter>EditDistance</Filter>
     </ClInclude>
+    <ClInclude Include="LongestIncreasingSubsequence.h">
+      <Filter>LongestIncreasingSubsequence</Filter>
+    </ClInclude>
+    <ClInclude Include="LISTest.h">
+      <Filter>LongestIncreasingSubsequence</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -76,6 +85,12 @@
     </ClCompile>
     <ClCompile Include="EditDistanceTests.cpp">
       <Filter>EditDistance</Filter>
+    </ClCompile>
+    <ClCompile Include="LongestIncreasingSubsequence.cpp">
+      <Filter>LongestIncreasingSubsequence</Filter>
+    </ClCompile>
+    <ClCompile Include="LISTest.cpp">
+      <Filter>LongestIncreasingSubsequence</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

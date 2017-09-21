@@ -5,12 +5,14 @@
 #include "TestFibonacci.h"
 #include "BinCoTest.h"
 #include "EditDistanceTest.h"
+#include "LISTest.h"
 
 int main()
 {
 	RunTests();
 	RunBinCoTest();
 	RunEditDistanceTests();
+	RunLISTest();
     return 0;
 }
 

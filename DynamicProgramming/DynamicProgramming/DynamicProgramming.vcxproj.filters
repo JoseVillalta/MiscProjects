@@ -28,6 +28,9 @@
     <Filter Include="PartitionProblem">
       <UniqueIdentifier>{584a030e-614a-4e76-889f-49d04e833ea3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="LongestCommonSubstring">
+      <UniqueIdentifier>{cd46577b-1808-460d-a723-e8d9832935b5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -69,6 +72,12 @@
     <ClInclude Include="PartitionTest.h">
       <Filter>PartitionProblem</Filter>
     </ClInclude>
+    <ClInclude Include="LongestCommonSubstring.h">
+      <Filter>LongestCommonSubstring</Filter>
+    </ClInclude>
+    <ClInclude Include="LongestCommonSubstringTest.h">
+      <Filter>LongestCommonSubstring</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -106,6 +115,12 @@
     </ClCompile>
     <ClCompile Include="PartitionTest.cpp">
       <Filter>PartitionProblem</Filter>
+    </ClCompile>
+    <ClCompile Include="LongestCommonSubstring.cpp">
+      <Filter>LongestCommonSubstring</Filter>
+    </ClCompile>
+    <ClCompile Include="LongestCommonSubstringTest.cpp">
+      <Filter>LongestCommonSubstring</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

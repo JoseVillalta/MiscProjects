@@ -4,6 +4,7 @@
 #define MATCH     0       /* enumerated type symbol for match */
 #define INSERT    1       /* enumerated type symbol for insert */
 #define DELETE    2       /* enumerated type symbol for delete */
+#define SWAP      3
 #define MAXLEN 20
 
 
@@ -58,6 +59,15 @@ void column_init(int i)
 		m[i][0].parent = -1;
 }
 
+int swap(char * s, char * t, int index_s, int index_t)
+{
+	if(s[index_s] == t[index_t -1] && s[index_s -1] == t[index_t])
+	{
+		return 1;
+	}
+	
+	return 2;
+}
 
 int match(char c, char d)
 {
@@ -74,7 +84,7 @@ int indel(char c)
 int string_compare(char *s, char *t, int s_size, int t_size)
 {
 	int i, j, k;
-	int opt[3];
+	int opt[4];
 
 	for(i=0;i<MAXLEN;i++)
 	{
@@ -88,11 +98,19 @@ int string_compare(char *s, char *t, int s_size, int t_size)
 			opt[MATCH] = m[i - 1][j - 1].cost + match(s[i], t[j]);
 			opt[INSERT] = m[i][j - 1].cost + indel(t[j]);
 			opt[DELETE] = m[i - 1][j].cost + indel(s[i]);
+			if(i > 2 & j > 2)
+			{
+				opt[SWAP] = m[i - 2][j - 2].cost + swap(s, t, i, j);
+			}
+			else
+			{
+				opt[SWAP] = m[i - i][j - 1].cost + 2;
+			}
 
 			m[i][j].cost = opt[MATCH];
 			m[i][j].parent = MATCH;
 
-			for(k=INSERT;k<=DELETE;k++)
+			for(k=INSERT;k<=SWAP;k++)
 			{
 				if(opt[k] < m[i][j].cost)
 				{

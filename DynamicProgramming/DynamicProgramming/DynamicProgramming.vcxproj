@@ -152,6 +152,8 @@
     <ClInclude Include="EditDistanceTest.h" />
     <ClInclude Include="Fibonacci.h" />
     <ClInclude Include="LISTest.h" />
+    <ClInclude Include="LongestCommonSubstring.h" />
+    <ClInclude Include="LongestCommonSubstringTest.h" />
     <ClInclude Include="LongestIncreasingSubsequence.h" />
     <ClInclude Include="PartitionProblem.h" />
     <ClInclude Include="PartitionTest.h" />
@@ -167,6 +169,8 @@
     <ClCompile Include="EditDistanceTests.cpp" />
     <ClCompile Include="Fibonacci.cpp" />
     <ClCompile Include="LISTest.cpp" />
+    <ClCompile Include="LongestCommonSubstring.cpp" />
+    <ClCompile Include="LongestCommonSubstringTest.cpp" />
     <ClCompile Include="LongestIncreasingSubsequence.cpp" />
     <ClCompile Include="PartitionProblem.cpp" />
     <ClCompile Include="PartitionTest.cpp" />

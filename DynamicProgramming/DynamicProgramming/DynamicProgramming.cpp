@@ -8,6 +8,7 @@
 #include "LISTest.h"
 #include "PartitionTest.h"
 #include "LongestCommonSubstringTest.h"
+#include "LCSTest.h"
 
 int main()
 {
@@ -17,6 +18,7 @@ int main()
 	RunLISTest();
 	RunPartitionProblemTest();
 	LongestCommonSubstringTest();
+	LCSTest();
     return 0;
 }
 

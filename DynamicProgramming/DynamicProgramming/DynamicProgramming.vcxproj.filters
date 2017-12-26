@@ -31,6 +31,9 @@
     <Filter Include="LongestCommonSubstring">
       <UniqueIdentifier>{cd46577b-1808-460d-a723-e8d9832935b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="LongestCommonSubsequence">
+      <UniqueIdentifier>{551610e8-1fb4-4d43-928d-2cd20cbcbc87}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -78,6 +81,12 @@
     <ClInclude Include="LongestCommonSubstringTest.h">
       <Filter>LongestCommonSubstring</Filter>
     </ClInclude>
+    <ClInclude Include="LongestCommonSubsequence.h">
+      <Filter>LongestCommonSubsequence</Filter>
+    </ClInclude>
+    <ClInclude Include="LCSTest.h">
+      <Filter>LongestCommonSubsequence</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -121,6 +130,12 @@
     </ClCompile>
     <ClCompile Include="LongestCommonSubstringTest.cpp">
       <Filter>LongestCommonSubstring</Filter>
+    </ClCompile>
+    <ClCompile Include="LongestCommonSubsequence.cpp">
+      <Filter>LongestCommonSubsequence</Filter>
+    </ClCompile>
+    <ClCompile Include="LCSTest.cpp">
+      <Filter>LongestCommonSubsequence</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

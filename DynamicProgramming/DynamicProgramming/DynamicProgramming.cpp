@@ -9,6 +9,7 @@
 #include "PartitionTest.h"
 #include "LongestCommonSubstringTest.h"
 #include "LCSTest.h"
+#include "CoinChangeTest.h"
 
 int main()
 {
@@ -18,7 +19,9 @@ int main()
 	RunLISTest();
 	RunPartitionProblemTest();
 	LongestCommonSubstringTest();
-	LCSTest();
+	auto cctest = new CoinChangeTests();
+	cctest->DoTests();
+	//LCSTest();
     return 0;
 }
 

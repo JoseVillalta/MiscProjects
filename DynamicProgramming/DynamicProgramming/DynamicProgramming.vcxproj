@@ -23,7 +23,7 @@
     <ProjectGuid>{A1E45CA2-B64E-434B-8280-783FA71ECBC0}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>DynamicProgramming</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -148,6 +148,8 @@
   <ItemGroup>
     <ClInclude Include="BinCoTest.h" />
     <ClInclude Include="BinomialCoefficient.h" />
+    <ClInclude Include="CoinChange.h" />
+    <ClInclude Include="CoinChangeTest.h" />
     <ClInclude Include="EditDistance.h" />
     <ClInclude Include="EditDistanceTest.h" />
     <ClInclude Include="Fibonacci.h" />
@@ -166,6 +168,8 @@
   <ItemGroup>
     <ClCompile Include="BinCoTest.cpp" />
     <ClCompile Include="BinomailCoefficient.cpp" />
+    <ClCompile Include="CoinChange.cpp" />
+    <ClCompile Include="CoinChangeTest.cpp" />
     <ClCompile Include="DynamicProgramming.cpp" />
     <ClCompile Include="EditDistance.cpp" />
     <ClCompile Include="EditDistanceTests.cpp" />

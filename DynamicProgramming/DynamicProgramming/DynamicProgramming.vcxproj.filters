@@ -34,6 +34,9 @@
     <Filter Include="LongestCommonSubsequence">
       <UniqueIdentifier>{551610e8-1fb4-4d43-928d-2cd20cbcbc87}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CoinChange">
+      <UniqueIdentifier>{19304bb6-b2d4-45a4-9fff-067708b0759a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -87,6 +90,12 @@
     <ClInclude Include="LCSTest.h">
       <Filter>LongestCommonSubsequence</Filter>
     </ClInclude>
+    <ClInclude Include="CoinChange.h">
+      <Filter>CoinChange</Filter>
+    </ClInclude>
+    <ClInclude Include="CoinChangeTest.h">
+      <Filter>CoinChange</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -136,6 +145,12 @@
     </ClCompile>
     <ClCompile Include="LCSTest.cpp">
       <Filter>LongestCommonSubsequence</Filter>
+    </ClCompile>
+    <ClCompile Include="CoinChange.cpp">
+      <Filter>CoinChange</Filter>
+    </ClCompile>
+    <ClCompile Include="CoinChangeTest.cpp">
+      <Filter>CoinChange</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

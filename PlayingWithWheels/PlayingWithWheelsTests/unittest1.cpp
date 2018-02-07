@@ -53,7 +53,7 @@ namespace PlayingWithWheelsTests
 			auto target = GetConfig(9999);
 
 			auto result = GetNext(conf, target);
-			Assert::AreEqual(1235, result.decimalVal);
+			Assert::AreEqual(2234, result.decimalVal);
 		}
 
 		TEST_METHOD(TestGetNext1)
@@ -62,25 +62,25 @@ namespace PlayingWithWheelsTests
 			auto target = GetConfig(1111);
 
 			auto result = GetNext(conf, target);
-			Assert::AreEqual(8887, result.decimalVal);
+			Assert::AreEqual(7888, result.decimalVal);
 		}
 
 		TEST_METHOD(TestGetNext2)
 		{
-			auto conf = GetConfig(1124);
-			auto target = GetConfig(2234);
+			auto conf = GetConfig(1145);
+			auto target = GetConfig(1234);
 
 			auto result = GetNext(conf, target);
-			Assert::AreEqual(1134, result.decimalVal);
+			Assert::AreEqual(1245, result.decimalVal);
 
 		}
 		TEST_METHOD(TestGetNext3)
 		{
-			auto conf = GetConfig(1134);
-			auto target = GetConfig(2234);
+			auto conf = GetConfig(1225);
+			auto target = GetConfig(1234);
 
 			auto result = GetNext(conf, target);
-			Assert::AreEqual(1234, result.decimalVal);
+			Assert::AreEqual(1235, result.decimalVal);
 
 		}
 		TEST_METHOD(TestGetNext4)
@@ -94,12 +94,31 @@ namespace PlayingWithWheelsTests
 		}
 		TEST_METHOD(TestGetNext5)
 		{
-			auto conf = GetConfig(1234);
-			auto target = GetConfig(4321);
+			auto conf = GetConfig(4321);
+			auto target = GetConfig(1234);
 
 			auto result = GetNext(conf, target);
-			Assert::AreEqual(1233, result.decimalVal);
+			Assert::AreEqual(3321, result.decimalVal);
 
+		}
+		TEST_METHOD(TestGetNext6)
+		{
+			auto conf = GetConfig(3345);
+			auto target = GetConfig(1234);
+
+			auto result = GetNext(conf, target);
+			Assert::AreEqual(2345, result.decimalVal);
+
+		}
+		TEST_METHOD(SolutionFinderTest)
+		{
+			auto conf = GetConfig(1111);
+			auto target = GetConfig(2223);
+
+			vector<config> ilegalConfs;
+
+			int result = SolutionFinder(conf, target, ilegalConfs);
+			Assert::AreEqual(5, result);
 		}
 	};
 }

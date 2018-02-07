@@ -69,73 +69,66 @@ config GetNext(config c, config t)
 {
 	config next;
 	
-	if (c.decimalVal > t.decimalVal)
+	if (c.p1 > t.p1)
 	{
-		if (c.p4 == t.p4)
+		next.p1 = c.p1 - 1;
+		next.p2 = c.p2;
+		next.p3 = c.p3;
+		next.p4 = c.p4;
+	}
+	else if(c.p1 < t.p1)
+	{
+		next.p1 = c.p1 + 1;
+		next.p2 = c.p2;
+		next.p3 = c.p3;
+		next.p4 = c.p4;
+	}
+	else// p1 equal 
+	{
+		next.p1 = c.p1;
+		if (c.p2 > t.p2)
 		{
+			next.p2 = c.p2 - 1;
+			next.p3 = c.p3;
 			next.p4 = c.p4;
-			if (c.p3 == t.p3)
-			{
-				next.p3 = c.p3;
-				if (c.p2 == t.p2)
-				{
-					next.p2 = c.p2;
-					next.p1 = c.p1 - 1;
-				}
-				else
-				{
-					next.p2 = c.p2 - 1;
-					next.p1 = c.p1;
-				}
-			}
-			else
+		}
+		else if (c.p2 < t.p2)
+		{
+			next.p2 = c.p2 + 1;
+			next.p3 = c.p3;
+			next.p4 = c.p4;
+		}
+		else // p2 equal
+		{
+			next.p2 = c.p2;
+			if (c.p3 > t.p3)
 			{
 				next.p3 = c.p3 - 1;
-				next.p2 = c.p2;
-				next.p1 = c.p1;		
+				next.p4 = c.p4;
 			}
-		}
-		else
-		{
-			next.p4 = c.p4 - 1;
-			next.p3 = c.p3;
-			next.p2 = c.p2;
-			next.p1 = c.p1;
-		}
-	}
-	else
-	{
-		if(c.p4 == t.p4)
-		{
-			next.p4 = c.p4;
-			if (c.p3 == t.p3)
-			{
-				next.p3 = c.p3;
-				if (c.p2 == t.p2)
-				{
-					next.p2 = c.p2;
-					next.p1 = c.p1 + 1;
-				}
-				else
-				{
-					next.p2 = c.p2 + 1;
-					next.p1 = c.p1;
-				}
-			}
-			else
+			else if (c.p3 < t.p3)
 			{
 				next.p3 = c.p3 + 1;
-				next.p2 = c.p2;
-				next.p1 = c.p1;
+				next.p4 = c.p4;
+			}
+			else // p3 equal
+			{
+				next.p3 = c.p3;
+				if (c.p4 > t.p4)
+				{
+					next.p4 = c.p4 - 1;
+				}
+				else if (c.p4 < t.p4)
+				{
+					next.p4 = c.p4 + 1;
+				}
+				else // they are equal
+				{
+					next.p4 = c.p4;
+				}
 			}
 		}
-		else
-		{
-			next.p4 = c.p4 + 1;
-			next.p3 = c.p3;
-			next.p2 = c.p2;
-			next.p1 = c.p1;
-		}
+
 	}
 	next.decimalVal = next.p1 * 1000 + next.p2 * 100 + next.p3 * 10 + next.p4;
 	return next;

@@ -153,6 +153,7 @@ config GetNext(config current, int scenario)
 		next.p3 = current.p3;
 		break;
 	}
+	next.GetDecimal();
 	return next;
 }
 

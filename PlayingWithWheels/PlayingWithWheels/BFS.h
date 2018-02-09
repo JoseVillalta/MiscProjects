@@ -11,6 +11,7 @@ bool discovered[MAXV+1];
 bool processed[MAXV+1];
 int steps[MAXV+1];
 
+
 typedef struct
 {
 	int p1;
@@ -23,6 +24,20 @@ typedef struct
 		decimalVal = p1 * 1000 + p2 * 100 + p3 * 10 + p4;
 	}
 }config;
+
+config GetConfig(int val)
+{
+	config c;
+	c.decimalVal = val;
+	c.p4 = val % 10;
+	val = val - c.p4;
+	c.p3 = (val % 100) / 10;
+	val = val - c.p3;
+	c.p2 = (val % 1000) / 100;
+	c.p1 = (val - c.p2) / 1000;
+
+	return c;
+}
 
 void InitSearch()
 {
@@ -178,6 +193,7 @@ bool ProcessNum(config current, queue<config> & q, int target)
 			}
 		}
 	}
+	return found;
 }
 
 int BFSearch(config start, config target, vector<config> ilegalConfigs)

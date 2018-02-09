@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 #include "..\PlayingWithWheels\BFS.h"
+#include "TestWithFiles.h"
+#include "CompareFiles.h"
 
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -104,6 +106,23 @@ namespace BFS
 			auto target = GetConfig(5317);
 			auto steps = BFSearch(start, target, v);
 			Assert::AreEqual(-1, steps);
+		}
+		TEST_METHOD(TestBfs3)
+		{
+			InitSearch();
+			vector<config> v;
+			v.push_back(GetConfig(9999));
+			auto start = GetConfig(9999);
+			auto target = GetConfig(0000);
+			auto steps = BFSearch(start, target, v);
+			Assert::AreEqual(4, steps);
+
+		}
+		TEST_METHOD(TestWithFiles1)
+		{
+			TestWithFiles("Input.txt", "Output1.txt");
+			bool match = CompareFiles("Output1.txt", "Output.txt");
+			Assert::AreEqual(true, match);
 		}
 	};
 }

@@ -24,6 +24,7 @@ namespace TouristGuideTests
 			tg->InsertEdge(1, 4, 10);
 			tg->InsertEdge(2, 4, 25);
 			tg->InsertEdge(3, 6, 20);
+			tg->InsertEdge(3, 4, 40);
 			tg->InsertEdge(2, 5, 60);
 			tg->InsertEdge(4, 7, 35);
 			tg->InsertEdge(5, 7, 20);
@@ -40,6 +41,7 @@ namespace TouristGuideTests
 			tg->InsertEdge(1, 3, 15);
 			tg->InsertEdge(1, 4, 10);
 			tg->InsertEdge(2, 4, 25);
+			tg->InsertEdge(3, 4, 40);
 			tg->InsertEdge(3, 6, 20);
 			tg->InsertEdge(2, 5, 60);
 			tg->InsertEdge(4, 7, 35);

@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 #include "..\Freckles\InkCalculator.h"
+#include "TestWithFiles.h"
+#include "CompareFiles.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -104,6 +106,13 @@ namespace FrecklesTests
 			g->InsertPoint(5.0, 0.0);
 			auto result = g->GetSolution();
 			Assert::AreEqual(4.0, result, 0.01);
+		}
+		TEST_METHOD(Input1)
+		{
+			TestWFiles("Input1.txt", "Output1.txt");
+			bool match = CompareFiles("Output1.txt", "ExpectedOutput1.txt");
+			Assert::AreEqual(true, match);
+
 		}
 	};
 }

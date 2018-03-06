@@ -12,9 +12,9 @@ long GetChange(vector<int> coins, int amount)
 	for (auto coin : coins)
 	{
 		int index = 1;
-		while (index < amount)
+		while (index <= amount)
 		{
-			if (coin >= index)
+			if (index >= coin)
 			{
 				amounts[index] += amounts[index - coin];
 			}

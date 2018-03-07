@@ -21,13 +21,10 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\PlayingWithWheels\Explorer.h">
-      <Filter>Resource Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TestWithFiles.h">
+    <ClInclude Include="NecklaceForTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CompareFiles.h">
+    <ClInclude Include="TestWithInputFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -35,16 +32,8 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="unittest2.cpp">
+    <ClCompile Include="unittest1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Input.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="Output.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
   </ItemGroup>
 </Project>

@@ -37,6 +37,9 @@
     <Filter Include="CoinChange">
       <UniqueIdentifier>{19304bb6-b2d4-45a4-9fff-067708b0759a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MinCoinChange">
+      <UniqueIdentifier>{50384943-f0ee-4cca-bec6-441fdb7acf48}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -96,6 +99,12 @@
     <ClInclude Include="CoinChangeTest.h">
       <Filter>CoinChange</Filter>
     </ClInclude>
+    <ClInclude Include="min_coin_change.h">
+      <Filter>MinCoinChange</Filter>
+    </ClInclude>
+    <ClInclude Include="min_coin_tests.h">
+      <Filter>MinCoinChange</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -151,6 +160,12 @@
     </ClCompile>
     <ClCompile Include="CoinChangeTest.cpp">
       <Filter>CoinChange</Filter>
+    </ClCompile>
+    <ClCompile Include="min_coin_change.cpp">
+      <Filter>MinCoinChange</Filter>
+    </ClCompile>
+    <ClCompile Include="min_coin_tests.cpp">
+      <Filter>MinCoinChange</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

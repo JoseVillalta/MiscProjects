@@ -10,6 +10,7 @@
 #include "LongestCommonSubstringTest.h"
 #include "LCSTest.h"
 #include "CoinChangeTest.h"
+#include "min_coin_tests.h"
 
 int main()
 {
@@ -21,7 +22,8 @@ int main()
 	LongestCommonSubstringTest();
 	auto cctest = new CoinChangeTests();
 	cctest->DoTests();
-	//LCSTest();
+	LCSTest();
+	TestMinCoinChange();
     return 0;
 }
 

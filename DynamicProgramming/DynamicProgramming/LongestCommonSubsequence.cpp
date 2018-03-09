@@ -64,9 +64,9 @@ vector<int> GetLCS(vector<int> x, vector<int> y)
 	vector<int> result;
 	init_cells();
 
-	for (int i = 1; i<=x.size(); i++)
+	for (int i = 1; i<x.size(); i++)
 	{
-		for (int j = 1; j<=y.size(); j++)
+		for (int j = 1; j<y.size(); j++)
 		{
 			if (x[i] == y[j])
 			{
@@ -87,6 +87,6 @@ vector<int> GetLCS(vector<int> x, vector<int> y)
 		}
 	}
 
-	result = rebuild_pattern(x.size(), y.size(), x);
+	result = rebuild_pattern(x.size()-1,y.size()-1, x);
 	return result;
 }

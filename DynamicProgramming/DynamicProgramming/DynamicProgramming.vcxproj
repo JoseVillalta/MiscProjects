@@ -159,6 +159,8 @@
     <ClInclude Include="LongestCommonSubstring.h" />
     <ClInclude Include="LongestCommonSubstringTest.h" />
     <ClInclude Include="LongestIncreasingSubsequence.h" />
+    <ClInclude Include="min_coin_change.h" />
+    <ClInclude Include="min_coin_tests.h" />
     <ClInclude Include="PartitionProblem.h" />
     <ClInclude Include="PartitionTest.h" />
     <ClInclude Include="stdafx.h" />
@@ -180,6 +182,8 @@
     <ClCompile Include="LongestCommonSubstring.cpp" />
     <ClCompile Include="LongestCommonSubstringTest.cpp" />
     <ClCompile Include="LongestIncreasingSubsequence.cpp" />
+    <ClCompile Include="min_coin_change.cpp" />
+    <ClCompile Include="min_coin_tests.cpp" />
     <ClCompile Include="PartitionProblem.cpp" />
     <ClCompile Include="PartitionTest.cpp" />
     <ClCompile Include="stdafx.cpp">

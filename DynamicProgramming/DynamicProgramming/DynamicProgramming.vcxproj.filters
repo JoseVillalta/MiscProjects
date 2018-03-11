@@ -40,6 +40,9 @@
     <Filter Include="MinCoinChange">
       <UniqueIdentifier>{50384943-f0ee-4cca-bec6-441fdb7acf48}</UniqueIdentifier>
     </Filter>
+    <Filter Include="KnapsackProblem">
+      <UniqueIdentifier>{e59fed46-728b-4d2f-90f9-f13c243be4d0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -105,6 +108,12 @@
     <ClInclude Include="min_coin_tests.h">
       <Filter>MinCoinChange</Filter>
     </ClInclude>
+    <ClInclude Include="knapsack.h">
+      <Filter>KnapsackProblem</Filter>
+    </ClInclude>
+    <ClInclude Include="knapsack_tests.h">
+      <Filter>KnapsackProblem</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -166,6 +175,12 @@
     </ClCompile>
     <ClCompile Include="min_coin_tests.cpp">
       <Filter>MinCoinChange</Filter>
+    </ClCompile>
+    <ClCompile Include="knapsack.cpp">
+      <Filter>KnapsackProblem</Filter>
+    </ClCompile>
+    <ClCompile Include="knapsack_tests.cpp">
+      <Filter>KnapsackProblem</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

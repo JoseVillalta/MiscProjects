@@ -153,6 +153,8 @@
     <ClInclude Include="EditDistance.h" />
     <ClInclude Include="EditDistanceTest.h" />
     <ClInclude Include="Fibonacci.h" />
+    <ClInclude Include="knapsack.h" />
+    <ClInclude Include="knapsack_tests.h" />
     <ClInclude Include="LCSTest.h" />
     <ClInclude Include="LISTest.h" />
     <ClInclude Include="LongestCommonSubsequence.h" />
@@ -176,6 +178,8 @@
     <ClCompile Include="EditDistance.cpp" />
     <ClCompile Include="EditDistanceTests.cpp" />
     <ClCompile Include="Fibonacci.cpp" />
+    <ClCompile Include="knapsack.cpp" />
+    <ClCompile Include="knapsack_tests.cpp" />
     <ClCompile Include="LCSTest.cpp" />
     <ClCompile Include="LISTest.cpp" />
     <ClCompile Include="LongestCommonSubsequence.cpp" />

@@ -11,6 +11,7 @@
 #include "LCSTest.h"
 #include "CoinChangeTest.h"
 #include "min_coin_tests.h"
+#include "knapsack_tests.h"
 
 int main()
 {
@@ -24,6 +25,7 @@ int main()
 	cctest->DoTests();
 	LCSTest();
 	TestMinCoinChange();
+	KnapsackTests();
     return 0;
 }
 
